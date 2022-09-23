@@ -31,6 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="detailsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fyU-J8-McV"/>
+                                    <segue destination="W5z-09-LjI" kind="show" identifier="openMineDetails" id="NFt-HM-AI5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,6 +54,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61" y="89"/>
+        </scene>
+        <!--MineDetailsViewController-->
+        <scene sceneID="h90-gK-FQf">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MineDetailsViewController" storyboardName="MineDetails" referencedIdentifier="MineDetailsViewController" id="W5z-09-LjI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fKV-H0-Gx8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GO5-NC-Pny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="293"/>
         </scene>
     </scenes>
     <resources>
