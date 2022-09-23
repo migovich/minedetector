@@ -24,6 +24,7 @@
 		155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145A828DE13D500CAADFE /* BaseViewController.swift */; };
 		155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145AB28DE15A600CAADFE /* SettingsViewController.swift */; };
 		155145AE28DE15B000CAADFE /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */; };
+		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		155145A828DE13D500CAADFE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		155145AB28DE15A600CAADFE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				1551459028DE0CB200CAADFE /* Authorization */,
 				1551459128DE0CBF00CAADFE /* Main */,
+				FA4F180528DE19E500060FE0 /* MineDetails.storyboard */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */,
 				1551459E28DE0DBC00CAADFE /* MapViewController.storyboard in Resources */,
 				1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */,
 				1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */,
