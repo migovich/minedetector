@@ -13,6 +13,7 @@
 		1551457228DDEC1800CAADFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457028DDEC1800CAADFE /* Main.storyboard */; };
 		1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1551457328DDEC1900CAADFE /* Assets.xcassets */; };
 		1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */; };
+		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		1551457628DDEC1900CAADFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1551457828DDEC1900CAADFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1551457E28DDED4800CAADFE /* MineDetect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MineDetect.entitlements; sourceTree = "<group>"; };
+		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				1551457328DDEC1900CAADFE /* Assets.xcassets */,
 				1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */,
 				1551457828DDEC1900CAADFE /* Info.plist */,
+				FA4F180328DDFFD200060FE0 /* Api.swift */,
 			);
 			path = MineDetect;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				1551456F28DDEC1800CAADFE /* ViewController.swift in Sources */,
 				1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */,
+				FA4F180428DDFFD200060FE0 /* Api.swift in Sources */,
 				1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +294,7 @@
 				CODE_SIGN_ENTITLEMENTS = MineDetect/MineDetect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JCY45QFZ9K;
+				DEVELOPMENT_TEAM = XKZLN9QQCQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MineDetect/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
