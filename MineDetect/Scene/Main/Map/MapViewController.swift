@@ -6,5 +6,15 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController { }
+class MapViewController: BaseViewController {
+    
+    // MARK: Outlets
+    @IBOutlet weak var mapView: MKMapView!
+    
+    // MARK: Actions
+    @IBAction func detailsButtonPressed(_ sender: UIButton) {
+        print(#function)
+    }
+}
