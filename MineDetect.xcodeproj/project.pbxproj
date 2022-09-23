@@ -9,24 +9,46 @@
 /* Begin PBXBuildFile section */
 		1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551456A28DDEC1800CAADFE /* AppDelegate.swift */; };
 		1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551456C28DDEC1800CAADFE /* SceneDelegate.swift */; };
-		1551456F28DDEC1800CAADFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551456E28DDEC1800CAADFE /* ViewController.swift */; };
 		1551457228DDEC1800CAADFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457028DDEC1800CAADFE /* Main.storyboard */; };
 		1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1551457328DDEC1900CAADFE /* Assets.xcassets */; };
 		1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */; };
 		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
+		1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458928DE0A3000CAADFE /* MainNavigationController.swift */; };
+		1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458B28DE0B3A00CAADFE /* LoginViewController.swift */; };
+		1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */; };
+		1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551459428DE0D6400CAADFE /* MapViewController.swift */; };
+		1551459A28DE0D9E00CAADFE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551459928DE0D9E00CAADFE /* PhotoViewController.swift */; };
+		1551459E28DE0DBC00CAADFE /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551459D28DE0DBC00CAADFE /* MapViewController.storyboard */; };
+		155145A028DE0DD400CAADFE /* PhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551459F28DE0DD400CAADFE /* PhotoViewController.storyboard */; };
+		155145A528DE0EF400CAADFE /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145A428DE0EF400CAADFE /* NSObject+Extensions.swift */; };
+		155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145A628DE13C300CAADFE /* UIViewController+Extensions.swift */; };
+		155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145A828DE13D500CAADFE /* BaseViewController.swift */; };
+		155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145AB28DE15A600CAADFE /* SettingsViewController.swift */; };
+		155145AE28DE15B000CAADFE /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1551456728DDEC1800CAADFE /* MineDetect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MineDetect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1551456A28DDEC1800CAADFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1551456C28DDEC1800CAADFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1551456E28DDEC1800CAADFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1551457128DDEC1800CAADFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1551457328DDEC1900CAADFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1551457628DDEC1900CAADFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1551457828DDEC1900CAADFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1551457E28DDED4800CAADFE /* MineDetect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MineDetect.entitlements; sourceTree = "<group>"; };
 		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		1551458928DE0A3000CAADFE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		1551458B28DE0B3A00CAADFE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		1551459428DE0D6400CAADFE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1551459928DE0D9E00CAADFE /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		1551459D28DE0DBC00CAADFE /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		1551459F28DE0DD400CAADFE /* PhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoViewController.storyboard; sourceTree = "<group>"; };
+		155145A428DE0EF400CAADFE /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		155145A628DE13C300CAADFE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		155145A828DE13D500CAADFE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		155145AB28DE15A600CAADFE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,16 +82,92 @@
 			isa = PBXGroup;
 			children = (
 				1551457E28DDED4800CAADFE /* MineDetect.entitlements */,
+				1551457828DDEC1900CAADFE /* Info.plist */,
 				1551456A28DDEC1800CAADFE /* AppDelegate.swift */,
 				1551456C28DDEC1800CAADFE /* SceneDelegate.swift */,
-				1551456E28DDEC1800CAADFE /* ViewController.swift */,
-				1551457028DDEC1800CAADFE /* Main.storyboard */,
-				1551457328DDEC1900CAADFE /* Assets.xcassets */,
+				155145A828DE13D500CAADFE /* BaseViewController.swift */,
+				1551458928DE0A3000CAADFE /* MainNavigationController.swift */,
+				1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */,
 				1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */,
 				1551457828DDEC1900CAADFE /* Info.plist */,
 				FA4F180328DDFFD200060FE0 /* Api.swift */,
+				1551458F28DE0CAA00CAADFE /* Scene */,
+				155145A328DE0EDD00CAADFE /* Extensions */,
+				1551459328DE0D2A00CAADFE /* Resources */,
 			);
 			path = MineDetect;
+			sourceTree = "<group>";
+		};
+		1551458F28DE0CAA00CAADFE /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1551459028DE0CB200CAADFE /* Authorization */,
+				1551459128DE0CBF00CAADFE /* Main */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		1551459028DE0CB200CAADFE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				1551457028DDEC1800CAADFE /* Main.storyboard */,
+				1551458B28DE0B3A00CAADFE /* LoginViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		1551459128DE0CBF00CAADFE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1551459628DE0D6800CAADFE /* Map */,
+				1551459828DE0D7800CAADFE /* Photo */,
+				155145AA28DE159200CAADFE /* Settings */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1551459328DE0D2A00CAADFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1551457328DDEC1900CAADFE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1551459628DE0D6800CAADFE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1551459428DE0D6400CAADFE /* MapViewController.swift */,
+				1551459D28DE0DBC00CAADFE /* MapViewController.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1551459828DE0D7800CAADFE /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				1551459928DE0D9E00CAADFE /* PhotoViewController.swift */,
+				1551459F28DE0DD400CAADFE /* PhotoViewController.storyboard */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		155145A328DE0EDD00CAADFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				155145A428DE0EF400CAADFE /* NSObject+Extensions.swift */,
+				155145A628DE13C300CAADFE /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		155145AA28DE159200CAADFE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				155145AB28DE15A600CAADFE /* SettingsViewController.swift */,
+				155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,9 +228,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1551459E28DE0DBC00CAADFE /* MapViewController.storyboard in Resources */,
 				1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */,
 				1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */,
 				1551457228DDEC1800CAADFE /* Main.storyboard in Resources */,
+				155145AE28DE15B000CAADFE /* SettingsViewController.storyboard in Resources */,
+				155145A028DE0DD400CAADFE /* PhotoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,9 +244,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1551456F28DDEC1800CAADFE /* ViewController.swift in Sources */,
+				155145A528DE0EF400CAADFE /* NSObject+Extensions.swift in Sources */,
+				1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */,
+				155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */,
+				1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */,
+				1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */,
+				155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */,
+				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,
 				1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */,
 				FA4F180428DDFFD200060FE0 /* Api.swift in Sources */,
+				1551459A28DE0D9E00CAADFE /* PhotoViewController.swift in Sources */,
+				1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */,
 				1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
