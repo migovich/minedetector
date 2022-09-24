@@ -43,6 +43,8 @@
 		FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */; };
 		FA4F181628DEECED00060FE0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181528DEECED00060FE0 /* Storage.swift */; };
 		FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */; };
+		FA4F182228DF3E6B00060FE0 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F182128DF3E6B00060FE0 /* MultipartForm.swift */; };
+		FA4F182428DF3E8100060FE0 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F182328DF3E8100060FE0 /* ApiModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
 		FA4F181528DEECED00060FE0 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesFetcher.swift; sourceTree = "<group>"; };
+		FA4F182128DF3E6B00060FE0 /* MultipartForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartForm.swift; sourceTree = "<group>"; };
+		FA4F182328DF3E8100060FE0 /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,10 +309,28 @@
 		FA4F181C28DF11B100060FE0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FA4F182028DF3E4700060FE0 /* ApiHelpers */,
+				FA4F181F28DF3E3700060FE0 /* ApiModels */,
 				FA4F180328DDFFD200060FE0 /* Api.swift */,
 				FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FA4F181F28DF3E3700060FE0 /* ApiModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F182328DF3E8100060FE0 /* ApiModels.swift */,
+			);
+			path = ApiModels;
+			sourceTree = "<group>";
+		};
+		FA4F182028DF3E4700060FE0 /* ApiHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F182128DF3E6B00060FE0 /* MultipartForm.swift */,
+			);
+			path = ApiHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +412,7 @@
 			files = (
 				158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */,
 				158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */,
+				FA4F182428DF3E8100060FE0 /* ApiModels.swift in Sources */,
 				155145A528DE0EF400CAADFE /* NSObject+Extensions.swift in Sources */,
 				FA4F181628DEECED00060FE0 /* Storage.swift in Sources */,
 				158F1EE328DEDF74004A42A8 /* MapController.swift in Sources */,
@@ -406,6 +429,7 @@
 				FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */,
 				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,
 				158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */,
+				FA4F182228DF3E6B00060FE0 /* MultipartForm.swift in Sources */,
 				1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */,
 				158F1EFA28DF15EF004A42A8 /* PreviewView.swift in Sources */,
 				FA4F180428DDFFD200060FE0 /* Api.swift in Sources */,

@@ -8,29 +8,6 @@
 import Foundation
 import UIKit
 
-struct ResponseModel: Codable {
-    
-}
-
-struct MinesRequestModel: Codable {}
-
-// MARK: - MinesModelElement
-struct MinesModelElement: Codable {
-    let status, id, photoURL, title: String
-    let userID, descriptions: String
-    
-    enum CodingKeys: String, CodingKey {
-        case status
-        case id = "_id"
-        case photoURL = "photoUrl"
-        case title
-        case userID = "userId"
-        case descriptions
-    }
-}
-
-typealias MinesModel = [MinesModelElement]
-//[{"status":"Open","_id":"632eb2afae903bda92d2c22b","photoUrl":"URL","title":"Mine1","userId":"1","descriptions":"descriptions"},{"status":"Open","_id":"632eb368ae903bda92d2c22d","photoUrl":"URL","title":"Mine2","userId":"2","descriptions":"descriptions"}]
 
 class APIHandler: NSObject {
     static func updateUser(_ userData: User, _ completion: @escaping ((ResponseModel?) -> ())) {
@@ -48,9 +25,24 @@ class APIHandler: NSObject {
             }
     }
     
-    static func getMines(_ requestModel: MinesRequestModel, _ completion: @escaping ((MinesModel?) -> ())) {
+    static func getMines(_ requestModel: MinesRequestModel, _ completion: @escaping ((MinesResponseModel?) -> ())) {
         call(ACRequest.getMines(requestModel))
-            .decoded(as: MinesModel.self, using: JSONDecoder())
+            .decoded(as: MinesResponseModel.self, using: JSONDecoder())
+            .observe { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        completion(data)
+                    case .failure(_):
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
+    static func addMine(_ requestModel: AddMineRequestModel, _ completion: @escaping ((AddMineResponseModel?) -> ())) {
+        upload(ACRequest.addMine(requestModel))
+            .decoded(as: AddMineResponseModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
                     switch result {
@@ -68,6 +60,10 @@ extension APIHandler {
    static func call(_ route: ACRequest) -> Future<Data> {
         return URLSession.shared.request(request: route.request)
     }
+    
+    static func upload(_ route: ACRequest) -> Future<Data> {
+        return URLSession.shared.upload(request: route.request, fromData: route.fromData ?? Data())
+    }
 }
 
 struct ACRequestData {
@@ -77,6 +73,7 @@ struct ACRequestData {
     var body: Data?
     var headers: [String: String]?
     var queries: [URLQueryItem]?
+    var fromData: Data?
 }
 let PORT = 4000
 let HOST = "3.15.199.210"
@@ -90,6 +87,7 @@ class ACRequest {
         return temp
     }
     static let headers = ["Content-Type": "application/json"]
+    var fromData: Data?
     var request: URLRequest!
     var token: String? {
         didSet {
@@ -97,6 +95,8 @@ class ACRequest {
         }
     }
     init(_ data: ACRequestData, _ host: String? = nil) {
+        fromData = data.fromData
+        
         var comps = baseComponents
         if let host = host {
             comps?.host = host
@@ -141,16 +141,40 @@ class ACRequest {
         //            return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
         //        }
         return request
-        }
+    }
+    
+    static func addMine(_ requestModel: AddMineRequestModel) -> ACRequest {
+        let form = MultipartForm(parts: [
+            MultipartForm.Part(name: "title", value: requestModel.title),
+            MultipartForm.Part(name: "userdId", value: requestModel.userdID),
+            MultipartForm.Part(name: "description", value: requestModel.description),
+            MultipartForm.Part(name: "location", value: requestModel.location.serialized()),
+            MultipartForm.Part(name: "file", data: requestModel.image, filename: "1.png", contentType: "image/png"),
+        ])
+
+        let data = ACRequestData(path: "/api/mines",
+                                 method: "POST",
+                                 headers: headers,
+                                 fromData: form.bodyData)
+        return ACRequest(data)
+    }
     
     static func getMines(_ requestModel: MinesRequestModel) -> ACRequest {
-        let data = ACRequestData(path: "/api/mines",
-                                 method: "GET",
+        let data = ACRequestData(path: "/api/mines/metadata",
+                                 method: "POST",
+                                 body: try? JSONEncoder().encode(requestModel),
                                  headers: headers)
         return ACRequest(data)
     }
     
-    // MARK: Remote Support API
+//    static func getMines(_ requestModel: MinesRequestModel) -> ACRequest {
+//        let data = ACRequestData(path: "/api/mines",
+//                                 method: "GET",
+//                                 headers: headers)
+//        return ACRequest(data)
+//    }
+    
+   
     
     static func requestCallback(_ requestModel: RequestModel) -> ACRequest {
         let data = ACRequestData(path: "/api/mobile/v1/requestCallback",
@@ -315,6 +339,26 @@ extension URLSession {
         
         // Perform a data task, just like we normally would:
         let task = dataTask(with: request) { data, _, error in
+            // Reject or resolve the promise, depending on the result:
+            if let error = error {
+                promise.reject(with: error)
+            } else {
+                promise.resolve(with: data ?? Data())
+            }
+        }
+        
+        task.resume()
+        
+        return promise
+    }
+    
+    func upload(request: URLRequest, fromData: Data) -> Future<Data> {
+        // We'll start by constructing a Promise, that will later be
+        // returned as a Future:
+        let promise = Promise<Data>()
+        
+        // Perform a data task, just like we normally would:
+        let task = uploadTask(with: request, from: fromData) { data, _, error in
             // Reject or resolve the promise, depending on the result:
             if let error = error {
                 promise.reject(with: error)

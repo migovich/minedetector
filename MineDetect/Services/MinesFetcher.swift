@@ -14,6 +14,7 @@ class MinesFetcher: NSObject {
     static let shared = MinesFetcher()
     private var fetchMinesWorkItem: DispatchWorkItem?
     var fetchDelay: Double = 60 * 1
+    
     weak var minesFetcherDelegate: MinesFetcherDelegate? {
         didSet {
             fetchMinesLoop()
@@ -56,7 +57,10 @@ class MinesFetcher: NSObject {
     ]
     
     func fetchMines(_ completion: (() -> Void)? = nil) {
-        APIHandler.getMines(MinesRequestModel()) { [weak self] response in
+        let minesRequestModel = MinesRequestModel(userID: "123",
+                                                  location: LocationService.shared.location,
+                                                  radius: 1)
+        APIHandler.getMines(minesRequestModel) { [weak self] response in
             print(response)
             if let response = response,
                 let mockMines = self?.mockMines {

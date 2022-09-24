@@ -60,13 +60,12 @@ class MapManager {
     private func getAnnotations(for mines: [MineModel]) -> [MKPointAnnotation] {
         var annotations: [MKPointAnnotation] = []
         mines.forEach { mine in
-            if let latitude = mine.location.latitude,
-               let longitude = mine.location.longitude {
-                let annotation = CustomAnnotation(model: mine)
-                annotation.title = mine.name
-                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                annotations.append(annotation)
-            }
+            let latitude = mine.location.latitude
+            let longitude = mine.location.longitude
+            let annotation = CustomAnnotation(model: mine)
+            annotation.title = mine.name
+            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            annotations.append(annotation)
         }
         return annotations
     }
