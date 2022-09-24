@@ -146,11 +146,22 @@
                         <outlet property="descriptionTextView" destination="fUW-YN-CeM" id="YKL-mg-FCs"/>
                         <outlet property="photoImageView" destination="BeJ-Uw-s8t" id="lNu-pn-GxF"/>
                         <outlet property="titleTextField" destination="ePd-CV-AMH" id="6tU-Iz-Rcc"/>
+                        <segue destination="jnw-wW-IE4" kind="show" identifier="takePhoto" id="7EE-5e-dJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="45.535714285714285"/>
+        </scene>
+        <!--PhotoViewController-->
+        <scene sceneID="NqO-7a-MhP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoViewController" referencedIdentifier="PhotoViewController" id="jnw-wW-IE4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3Or-6G-Lpr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIA-C0-Pxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="426"/>
         </scene>
         <!--View Photo View Controller-->
         <scene sceneID="8XS-Hm-ahH">

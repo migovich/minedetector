@@ -45,7 +45,7 @@ class MainTabBarController: UITabBarController {
         photoVC.tabBarItem = photoItem
         settingsVC.tabBarItem = settingsItem
         
-        let controllers = [mapVC, photoVC, settingsVC]
+        let controllers = [mapVC, settingsVC]
         
         viewControllers = controllers.map { UINavigationController(rootViewController: $0) }
         if let viewControllers = viewControllers {
