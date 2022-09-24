@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol PhotoPreviewViewControllerDelegate: AnyObject {
+    func didConfirmPhoto()
+}
+
 class PhotoPreviewViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var imageView: UIImageView!
     
     // MARK: Properties
+    weak var delegate: PhotoPreviewViewControllerDelegate?
     var imageData: Data?
     
     // MARK: Life Cycle
@@ -29,6 +34,9 @@ class PhotoPreviewViewController: BaseViewController {
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        print(#function)
+        MainManager.shared.pendingImageData = imageData
+        dismiss(animated: true) { [weak self] in
+            self?.delegate?.didConfirmPhoto()
+        }
     }
 }

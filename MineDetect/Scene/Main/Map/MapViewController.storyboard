@@ -19,37 +19,106 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dl3-vr-vBD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bt-jS-r9V">
-                                <rect key="frame" x="20" y="790" width="374" height="52"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="Aq8-Oc-whl">
+                                <rect key="frame" x="175" y="367" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="nDW-Db-ATW"/>
+                                    <constraint firstAttribute="height" constant="64" id="HqO-p2-ida"/>
+                                    <constraint firstAttribute="width" secondItem="Aq8-Oc-whl" secondAttribute="height" multiplier="1:1" id="vWw-a0-Awk"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Add 💣">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="detailsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fyU-J8-McV"/>
-                                    <segue destination="W5z-09-LjI" kind="show" identifier="openMineDetails" id="NFt-HM-AI5"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="col-K1-Uee">
+                                <rect key="frame" x="20" y="718" width="374" height="124"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xON-oX-ewb">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sce-EM-pgg">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="52"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Cancel ⛔️"/>
+                                                <connections>
+                                                    <action selector="cancelPickMineButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MWF-5f-DjE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhV-y2-85H">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="52"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Confirm ✅"/>
+                                                <connections>
+                                                    <action selector="confirmPickMineButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WBT-Ke-FeS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="nXt-dc-fXM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JqP-Dp-eXN">
+                                        <rect key="frame" x="0.0" y="72" width="374" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-pl-XF3">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="52"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="jpA-rD-mDc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Camera 📸">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="makePhotoButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZJy-at-Btq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bt-jS-r9V">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="52"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="nDW-Db-ATW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Add 💣">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="detailsButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fyU-J8-McV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JqP-Dp-eXN" firstAttribute="leading" secondItem="col-K1-Uee" secondAttribute="leading" id="NkF-Th-kQ7"/>
+                                    <constraint firstItem="xON-oX-ewb" firstAttribute="leading" secondItem="col-K1-Uee" secondAttribute="leading" id="fuP-eA-nMa"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="col-K1-Uee" secondAttribute="bottom" constant="20" id="1Jt-yT-MpJ"/>
                             <constraint firstItem="Dl3-vr-vBD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="369-w0-aDf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3bt-jS-r9V" secondAttribute="bottom" constant="20" id="6Hc-i3-Oex"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3bt-jS-r9V" secondAttribute="trailing" constant="20" id="7s7-Cj-5pb"/>
-                            <constraint firstItem="3bt-jS-r9V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="9Yv-Bj-Awd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dl3-vr-vBD" secondAttribute="trailing" id="ERN-ZO-3Sh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Dl3-vr-vBD" secondAttribute="bottom" id="EeO-s9-BJT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="col-K1-Uee" secondAttribute="trailing" constant="20" id="Uzg-lu-HmV"/>
+                            <constraint firstItem="col-K1-Uee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bsy-dj-lJn"/>
+                            <constraint firstItem="Aq8-Oc-whl" firstAttribute="centerY" secondItem="Dl3-vr-vBD" secondAttribute="centerY" constant="-32" id="cDq-uj-mmE"/>
+                            <constraint firstItem="Aq8-Oc-whl" firstAttribute="centerX" secondItem="Dl3-vr-vBD" secondAttribute="centerX" id="hFV-ck-Rrn"/>
                             <constraint firstItem="Dl3-vr-vBD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="kIO-kF-K2m"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="footerButtonsStackView" destination="JqP-Dp-eXN" id="S3L-kt-Mh1"/>
                         <outlet property="mapView" destination="Dl3-vr-vBD" id="2Jn-1l-PsA"/>
+                        <outlet property="pickMineStackView" destination="xON-oX-ewb" id="bUu-ML-LGW"/>
+                        <outlet property="pinImageView" destination="Aq8-Oc-whl" id="nE2-gG-Lge"/>
                         <segue destination="tZm-QD-bGz" kind="presentation" identifier="presentMineInfo" id="xhU-Ce-YX0"/>
+                        <segue destination="sP5-Um-ORk" kind="show" identifier="takePhoto" id="uhy-3J-AbU"/>
+                        <segue destination="W5z-09-LjI" kind="show" identifier="showMineDetails" id="JWz-ay-CED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,10 +141,21 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO5-NC-Pny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="305"/>
+            <point key="canvasLocation" x="882" y="151"/>
+        </scene>
+        <!--PhotoViewController-->
+        <scene sceneID="zKq-9Z-hJ3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoViewController" referencedIdentifier="PhotoViewController" id="sP5-Um-ORk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="inb-YZ-yE2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWu-xl-HD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="254"/>
         </scene>
     </scenes>
     <resources>
+        <image name="pin" width="512" height="512"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

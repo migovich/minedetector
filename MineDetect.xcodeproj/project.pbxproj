@@ -29,7 +29,6 @@
 		158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE428DEDF96004A42A8 /* LocationService.swift */; };
 		158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE628DEE145004A42A8 /* MapManager.swift */; };
 		158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE828DEE219004A42A8 /* MineModel.swift */; };
-		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 		158F1EEC28DEFB83004A42A8 /* MineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */; };
 		158F1EEE28DEFBA6004A42A8 /* MineInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */; };
 		158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */; };
@@ -37,6 +36,7 @@
 		158F1EFA28DF15EF004A42A8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EF928DF15EF004A42A8 /* PreviewView.swift */; };
 		158F1EFD28DF1CD8004A42A8 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EFC28DF1CD8004A42A8 /* PhotoPreviewViewController.swift */; };
 		158F1EFF28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F1EFE28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard */; };
+		158F1F0228DF2CE0004A42A8 /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1F0128DF2CE0004A42A8 /* MainManager.swift */; };
 		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
 		FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */; };
@@ -71,7 +71,6 @@
 		158F1EE428DEDF96004A42A8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		158F1EE628DEE145004A42A8 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		158F1EE828DEE219004A42A8 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
-		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoViewController.swift; sourceTree = "<group>"; };
 		158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInfoViewController.storyboard; sourceTree = "<group>"; };
 		158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		158F1EF928DF15EF004A42A8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		158F1EFC28DF1CD8004A42A8 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		158F1EFE28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPreviewViewController.storyboard; sourceTree = "<group>"; };
+		158F1F0128DF2CE0004A42A8 /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
 		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
 		FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDetailsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +117,7 @@
 		1551456928DDEC1800CAADFE /* MineDetect */ = {
 			isa = PBXGroup;
 			children = (
+				158F1F0028DF2CC9004A42A8 /* Managers */,
 				FA4F181428DEECED00060FE0 /* Storage */,
 				1551457E28DDED4800CAADFE /* MineDetect.entitlements */,
 				1551456A28DDEC1800CAADFE /* AppDelegate.swift */,
@@ -269,6 +270,14 @@
 			path = PhotoPreview;
 			sourceTree = "<group>";
 		};
+		158F1F0028DF2CC9004A42A8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				158F1F0128DF2CE0004A42A8 /* MainManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		FA4F180728DEDD0800060FE0 /* MineDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +401,7 @@
 				1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */,
 				FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */,
 				1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */,
+				158F1F0228DF2CE0004A42A8 /* MainManager.swift in Sources */,
 				155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */,
 				FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */,
 				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,

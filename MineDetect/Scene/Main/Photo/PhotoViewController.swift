@@ -63,7 +63,14 @@ extension PhotoViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? PhotoPreviewViewController {
             controller.imageData = photoData
+            controller.delegate = self
         }
+    }
+}
+
+extension PhotoViewController: PhotoPreviewViewControllerDelegate {
+    func didConfirmPhoto() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
