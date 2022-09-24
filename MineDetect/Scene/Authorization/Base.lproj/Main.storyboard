@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjP-1c-Gux">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введіть ваше імʼя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FjP-1c-Gux">
                                 <rect key="frame" x="20" y="427" width="374" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="CBc-em-4aG"/>
@@ -42,36 +41,35 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAo-Wa-s9G">
                                 <rect key="frame" x="20" y="790" width="374" height="52"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="0e6-Wk-f1b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Зареєструватись"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Зареєструватись">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="rAm-da-TMW" eventType="touchUpInside" id="dec-Ea-wis"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdw-5k-9Sq">
-                                <rect key="frame" x="20" y="383" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизація" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVk-rP-HOu">
+                                <rect key="frame" x="145.5" y="64" width="123" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W8i-m0-msJ"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fAo-Wa-s9G" firstAttribute="leading" secondItem="W8i-m0-msJ" secondAttribute="leading" constant="20" id="0iy-9Q-qYx"/>
-                            <constraint firstItem="FjP-1c-Gux" firstAttribute="top" secondItem="Kdw-5k-9Sq" secondAttribute="bottom" constant="20" id="1BO-wi-lKh"/>
                             <constraint firstItem="FjP-1c-Gux" firstAttribute="centerX" secondItem="W8i-m0-msJ" secondAttribute="centerX" id="8kz-8c-frl"/>
                             <constraint firstItem="FjP-1c-Gux" firstAttribute="leading" secondItem="W8i-m0-msJ" secondAttribute="leading" constant="20" id="OYh-Co-j5S"/>
-                            <constraint firstItem="Kdw-5k-9Sq" firstAttribute="trailing" secondItem="FjP-1c-Gux" secondAttribute="trailing" id="QDH-ez-ZHh"/>
                             <constraint firstItem="fAo-Wa-s9G" firstAttribute="centerX" secondItem="W8i-m0-msJ" secondAttribute="centerX" id="RVI-2l-GxT"/>
-                            <constraint firstItem="Kdw-5k-9Sq" firstAttribute="leading" secondItem="FjP-1c-Gux" secondAttribute="leading" id="jvF-2g-4Un"/>
+                            <constraint firstItem="IVk-rP-HOu" firstAttribute="centerX" secondItem="W8i-m0-msJ" secondAttribute="centerX" id="dXO-Gq-jT3"/>
+                            <constraint firstItem="IVk-rP-HOu" firstAttribute="top" secondItem="W8i-m0-msJ" secondAttribute="top" constant="20" id="jC3-Bg-xOF"/>
                             <constraint firstItem="FjP-1c-Gux" firstAttribute="centerY" secondItem="W8i-m0-msJ" secondAttribute="centerY" id="nJK-ON-fAt"/>
                             <constraint firstItem="W8i-m0-msJ" firstAttribute="bottom" secondItem="fAo-Wa-s9G" secondAttribute="bottom" constant="20" id="yf5-eW-8Fh"/>
                         </constraints>
@@ -103,11 +101,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Lh-Vv-wyE"/>
+        <segue reference="dZU-f6-eNN"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
