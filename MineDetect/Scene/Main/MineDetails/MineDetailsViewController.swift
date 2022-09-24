@@ -40,7 +40,7 @@ class MineDetailsViewController: BaseViewController {
         if let location = location,
            let imageData = MainManager.shared.pendingImageData,
            let image = UIImage(data: imageData),
-           let compressedImageData = image.jpeg(.lowest) {
+           let compressedImageData = image.jpeg(.medium) {
             let requestModel = AddMineRequestModel(location: location,
                                                    title: titleTextField.text ?? "",
                                                    userdID: "632ef0e8d628897e69af8fa8",
