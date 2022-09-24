@@ -28,8 +28,25 @@ class MapViewController: BaseViewController {
         print(#function)
     }
     
-    @objc func didClickDetailDisclosure(button: UIButton) {
-        print(#function)
+    @objc func didClickDetailDisclosure(sender: MineInfoTapGestureRecognizer) {
+        performSegue(withIdentifier: "presentMineInfo", sender: sender.model)
+    }
+    
+    // MARK: Helpers
+    class MineInfoTapGestureRecognizer: UITapGestureRecognizer {
+        var model: MineModel?
+    }
+}
+
+// MARK: - Navigation
+extension MapViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? MineInfoViewController,
+           let mine = sender as? MineModel {
+            controller.model = MineInfoViewController.Model(title: mine.name,
+                                                            description: mine.description,
+                                                            imageUrl: mine.imageUrl)
+        }
     }
 }
 
@@ -37,11 +54,16 @@ class MapViewController: BaseViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation { return nil }
-        let annotationView = MapMineAnnotationView(annotation: annotation, reuseIdentifier: MapMineAnnotationView.className)
-        let rightButton = UIButton(type: .detailDisclosure)
-        rightButton.addTarget(self, action: #selector(didClickDetailDisclosure(button:)), for: .touchUpInside)
-        annotationView.rightCalloutAccessoryView = rightButton
-        return annotationView
+        if let customAnnotation = annotation as? CustomAnnotation {
+            let annotationView = MapMineAnnotationView(annotation: annotation, reuseIdentifier: MapMineAnnotationView.className)
+            let rightButton = UIButton(type: .detailDisclosure)
+            let tapGesture = MineInfoTapGestureRecognizer(target: self, action: #selector(didClickDetailDisclosure(sender:)))
+            tapGesture.model = customAnnotation.model
+            rightButton.addGestureRecognizer(tapGesture)
+            annotationView.rightCalloutAccessoryView = rightButton
+            return annotationView
+        }
+        return nil
     }
 }
 
