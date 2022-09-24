@@ -30,6 +30,9 @@
 		158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE628DEE145004A42A8 /* MapManager.swift */; };
 		158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE828DEE219004A42A8 /* MineModel.swift */; };
 		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
+		FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */; };
+		FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */; };
+		FA4F181628DEECED00060FE0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181528DEECED00060FE0 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		158F1EE628DEE145004A42A8 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		158F1EE828DEE219004A42A8 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
 		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
+		FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDetailsViewController.swift; sourceTree = "<group>"; };
+		FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
+		FA4F181528DEECED00060FE0 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		1551456928DDEC1800CAADFE /* MineDetect */ = {
 			isa = PBXGroup;
 			children = (
+				FA4F181428DEECED00060FE0 /* Storage */,
 				1551457E28DDED4800CAADFE /* MineDetect.entitlements */,
 				1551457828DDEC1900CAADFE /* Info.plist */,
 				1551456A28DDEC1800CAADFE /* AppDelegate.swift */,
@@ -128,6 +135,8 @@
 		1551459128DE0CBF00CAADFE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FA4F180A28DEDEA200060FE0 /* ViewPhoto */,
+				FA4F180728DEDD0800060FE0 /* MineDetails */,
 				1551459628DE0D6800CAADFE /* Map */,
 				1551459828DE0D7800CAADFE /* Photo */,
 				155145AA28DE159200CAADFE /* Settings */,
@@ -182,6 +191,30 @@
 				155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		FA4F180728DEDD0800060FE0 /* MineDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */,
+			);
+			path = MineDetails;
+			sourceTree = "<group>";
+		};
+		FA4F180A28DEDEA200060FE0 /* ViewPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */,
+			);
+			path = ViewPhoto;
+			sourceTree = "<group>";
+		};
+		FA4F181428DEECED00060FE0 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F181528DEECED00060FE0 /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,11 +295,14 @@
 				158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */,
 				158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */,
 				155145A528DE0EF400CAADFE /* NSObject+Extensions.swift in Sources */,
+				FA4F181628DEECED00060FE0 /* Storage.swift in Sources */,
 				158F1EE328DEDF74004A42A8 /* MapController.swift in Sources */,
 				158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */,
 				1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */,
 				155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */,
+				FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */,
 				1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */,
+				FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */,
 				1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */,
 				155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */,
 				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,
