@@ -7,37 +7,43 @@
 
 import UIKit
 
-class MineDetailsViewController: UIViewController {
+class MineDetailsViewController: BaseViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         descriptionTextView.text = ""
         descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-
-    @IBAction func takePhotoAction(_ sender: Any) {
-    }
-    @IBAction func saveAction(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureImageView()
     }
     
-    // MARK: - Navigation
+    private func configureImageView() {
+        if let imageData = MainManager.shared.pendingImageData {
+            photoImageView.image = UIImage(data: imageData)
+        }
+    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func takePhotoAction(_ sender: Any) {
+        performSegue(withIdentifier: "takePhoto", sender: nil)
+    }
+    
+    @IBAction func saveAction(_ sender: Any) {
+    }
+}
+
+extension MineDetailsViewController {
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if let controller = segue.destination as? ViewPhotoViewController {
             controller.photoImage = photoImageView.image
         }
     }
-    
-
 }

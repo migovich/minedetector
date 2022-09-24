@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,25 +8,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo View Controller-->
+        <!--Take Photo-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PhotoViewController" customModule="MineDetect" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="PhotoViewController" title="Take Photo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PhotoViewController" customModule="MineDetect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABL-aF-HsW" customClass="PreviewView" customModule="MineDetect" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt6-zg-gxI">
+                                <rect key="frame" x="171" y="770" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wt6-zg-gxI" secondAttribute="height" multiplier="1:1" id="CJq-zC-PPc"/>
+                                    <constraint firstAttribute="height" constant="72" id="XRT-Qc-jpQ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="capture"/>
+                                <connections>
+                                    <action selector="captureButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B8u-uB-uG1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ABL-aF-HsW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2jt-Ps-83M"/>
+                            <constraint firstItem="ABL-aF-HsW" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GeY-YI-kjg"/>
+                            <constraint firstItem="ABL-aF-HsW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RUL-dI-siO"/>
+                            <constraint firstItem="Wt6-zg-gxI" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Tev-fA-X1Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ABL-aF-HsW" secondAttribute="bottom" id="b24-7K-z92"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Wt6-zg-gxI" secondAttribute="bottom" constant="20" id="iJb-in-tUk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="ABL-aF-HsW" id="F51-bN-Wi8"/>
+                        <segue destination="Ecj-rZ-Ko8" kind="presentation" identifier="presentPhotoPreview" id="vPh-O3-qUN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61" y="89"/>
         </scene>
+        <!--PhotoPreviewViewController-->
+        <scene sceneID="zm1-QM-haQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoPreviewViewController" referencedIdentifier="PhotoPreviewViewController" id="Ecj-rZ-Ko8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFB-Sa-7Od" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739" y="88"/>
+        </scene>
     </scenes>
     <resources>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="capture" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

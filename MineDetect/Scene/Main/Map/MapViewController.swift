@@ -12,9 +12,13 @@ class MapViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pickMineStackView: UIStackView!
+    @IBOutlet weak var pinImageView: UIImageView!
+    @IBOutlet weak var footerButtonsStackView: UIStackView!
     
     // MARK: Dependency Properties
     private lazy var controller = MapController(with: self)
+    private let manager = MainManager.shared
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -23,9 +27,47 @@ class MapViewController: BaseViewController {
         controller.updateViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configureView()
+    }
+    
+    // MARK: Functions
+    private func configureView() {
+        configureView(with: manager.mapState)
+    }
+    
+    private func configureView(with state: MapState) {
+        switch state {
+        case .defaultState:
+            pinImageView.isHidden = true
+            pickMineStackView.isHidden = true
+            footerButtonsStackView.isHidden = false
+        case .pickMine:
+            pinImageView.isHidden = false
+            pickMineStackView.isHidden = false
+            footerButtonsStackView.isHidden = true
+        }
+    }
+    
     // MARK: Actions
     @IBAction func detailsButtonPressed(_ sender: UIButton) {
-        print(#function)
+        manager.mapState = .pickMine
+        configureView()
+    }
+    
+    @IBAction func makePhotoButtonPressed(_ sender: UIButton) {
+        manager.mapState = .pickMine
+        performSegue(withIdentifier: "takePhoto", sender: nil)
+    }
+    
+    @IBAction func cancelPickMineButtonPressed(_ sender: UIButton) {
+        manager.mapState = .defaultState
+        manager.pendingImageData = nil
+        configureView()
+    }
+    
+    @IBAction func confirmPickMineButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "showMineDetails", sender: nil)
     }
     
     @objc func didClickDetailDisclosure(sender: MineInfoTapGestureRecognizer) {
@@ -64,6 +106,10 @@ extension MapViewController: MKMapViewDelegate {
             return annotationView
         }
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        print("📍 \(mapView.centerCoordinate)")
     }
 }
 
