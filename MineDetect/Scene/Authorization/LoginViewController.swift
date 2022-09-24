@@ -17,7 +17,14 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         if Storage.shared.user?.name != nil {
             // performSegue(withIdentifier: "loggedIn", sender: nil)
-            nameTextField.text = Storage.shared.user?.name
+            let userName = Storage.shared.user?.name ?? ""
+            nameTextField.text = userName
+            APIHandler.login(LoginRequestModel(userName: userName)) { response in
+                print("login:")
+                print(response)
+                //Storage.shared.user?.userId = response.userId
+                //performSegue(withIdentifier: "loggedIn", sender: nil)
+            }
         }
     }
     
@@ -28,6 +35,11 @@ class LoginViewController: BaseViewController {
             // api request { userId in
             //  Storage.shared.user?.userId = userId
             //}
+            let token = Storage.shared.user?.deviceToken ?? ""
+            APIHandler.signup(SignupRequestModel(name: userName, deviceToken: token)) { response in
+                print("signup:")
+                print(response)
+            }
             performSegue(withIdentifier: "loggedIn", sender: nil)
         }
     }

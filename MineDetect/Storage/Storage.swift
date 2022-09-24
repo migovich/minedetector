@@ -19,6 +19,12 @@ class User: Codable {
         }
     }
     
+    var deviceToken: String? {
+        didSet {
+            save()
+        }
+    }
+    
     static func load() -> User? {
         if let data = UserDefaults.standard.object(forKey: "user") as? Data {
             return try? JSONDecoder().decode(User.self, from: data)
