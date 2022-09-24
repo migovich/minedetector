@@ -29,6 +29,10 @@
 		158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE428DEDF96004A42A8 /* LocationService.swift */; };
 		158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE628DEE145004A42A8 /* MapManager.swift */; };
 		158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE828DEE219004A42A8 /* MineModel.swift */; };
+		158F1EEC28DEFB83004A42A8 /* MineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */; };
+		158F1EEE28DEFBA6004A42A8 /* MineInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */; };
+		158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */; };
+		158F1EF228DF10AF004A42A8 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EF128DF10AF004A42A8 /* CustomAnnotation.swift */; };
 		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
 		FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */; };
 		FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */; };
@@ -61,6 +65,10 @@
 		158F1EE428DEDF96004A42A8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		158F1EE628DEE145004A42A8 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		158F1EE828DEE219004A42A8 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
+		158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoViewController.swift; sourceTree = "<group>"; };
+		158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInfoViewController.storyboard; sourceTree = "<group>"; };
+		158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		158F1EF128DF10AF004A42A8 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
 		FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDetailsViewController.swift; sourceTree = "<group>"; };
 		FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +126,6 @@
 			children = (
 				1551459028DE0CB200CAADFE /* Authorization */,
 				1551459128DE0CBF00CAADFE /* Main */,
-				FA4F180528DE19E500060FE0 /* MineDetails.storyboard */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -137,9 +144,11 @@
 			children = (
 				FA4F180A28DEDEA200060FE0 /* ViewPhoto */,
 				FA4F180728DEDD0800060FE0 /* MineDetails */,
+				158F1EEA28DEFB6D004A42A8 /* MineInfo */,
 				1551459628DE0D6800CAADFE /* Map */,
 				1551459828DE0D7800CAADFE /* Photo */,
 				155145AA28DE159200CAADFE /* Settings */,
+				FA4F180528DE19E500060FE0 /* MineDetails.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -156,12 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				1551459D28DE0DBC00CAADFE /* MapViewController.storyboard */,
-				158F1EE428DEDF96004A42A8 /* LocationService.swift */,
+				1551459428DE0D6400CAADFE /* MapViewController.swift */,
 				158F1EE228DEDF74004A42A8 /* MapController.swift */,
 				158F1EE628DEE145004A42A8 /* MapManager.swift */,
-				158F1EE028DEDECD004A42A8 /* MapMineAnnotationView.swift */,
-				1551459428DE0D6400CAADFE /* MapViewController.swift */,
-				158F1EE828DEE219004A42A8 /* MineModel.swift */,
+				158F1EF528DF10DF004A42A8 /* Helpers */,
+				158F1EF328DF10B6004A42A8 /* Models */,
+				158F1EF428DF10C5004A42A8 /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -180,6 +189,7 @@
 			children = (
 				155145A428DE0EF400CAADFE /* NSObject+Extensions.swift */,
 				155145A628DE13C300CAADFE /* UIViewController+Extensions.swift */,
+				158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +201,40 @@
 				155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		158F1EEA28DEFB6D004A42A8 /* MineInfo */ = {
+			isa = PBXGroup;
+			children = (
+				158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */,
+				158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */,
+			);
+			path = MineInfo;
+			sourceTree = "<group>";
+		};
+		158F1EF328DF10B6004A42A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				158F1EE828DEE219004A42A8 /* MineModel.swift */,
+				158F1EF128DF10AF004A42A8 /* CustomAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		158F1EF428DF10C5004A42A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				158F1EE028DEDECD004A42A8 /* MapMineAnnotationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		158F1EF528DF10DF004A42A8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				158F1EE428DEDF96004A42A8 /* LocationService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FA4F180728DEDD0800060FE0 /* MineDetails */ = {
@@ -279,6 +323,7 @@
 				1551459E28DE0DBC00CAADFE /* MapViewController.storyboard in Resources */,
 				1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */,
 				1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */,
+				158F1EEE28DEFBA6004A42A8 /* MineInfoViewController.storyboard in Resources */,
 				1551457228DDEC1800CAADFE /* Main.storyboard in Resources */,
 				155145AE28DE15B000CAADFE /* SettingsViewController.storyboard in Resources */,
 				155145A028DE0DD400CAADFE /* PhotoViewController.storyboard in Resources */,
@@ -299,6 +344,7 @@
 				158F1EE328DEDF74004A42A8 /* MapController.swift in Sources */,
 				158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */,
 				1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */,
+				158F1EEC28DEFB83004A42A8 /* MineInfoViewController.swift in Sources */,
 				155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */,
 				FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */,
 				1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */,
@@ -306,7 +352,9 @@
 				1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */,
 				155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */,
 				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,
+				158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */,
 				1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */,
+				158F1EF228DF10AF004A42A8 /* CustomAnnotation.swift in Sources */,
 				1551459A28DE0D9E00CAADFE /* PhotoViewController.swift in Sources */,
 				1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */,
 				1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */,

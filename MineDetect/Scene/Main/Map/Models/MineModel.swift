@@ -9,6 +9,8 @@ import Foundation
 
 struct MineModel {
     let name: String?
+    let description: String?
+    let imageUrl: String?
     let location: Location
 }
 
