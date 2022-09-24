@@ -15,10 +15,21 @@ class LoginViewController: BaseViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Storage.shared.user?.name != nil {
+            // performSegue(withIdentifier: "loggedIn", sender: nil)
+            nameTextField.text = Storage.shared.user?.name
+        }
+        
     }
     
     // MARK: Actions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "loggedIn", sender: nil)
+        if let userName = nameTextField.text, userName.count >= 3 {
+            Storage.shared.user?.name = userName
+            // api request { userId in
+            //  Storage.shared.user?.userId = userId
+            //}
+            performSegue(withIdentifier: "loggedIn", sender: nil)
+        }
     }
 }
