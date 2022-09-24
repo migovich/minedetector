@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerForPushNotifications()
         
-        let minesRequestModel = MinesRequestModel(userID: "123",
+        let minesRequestModel = MinesRequestModel(userID: "632ef0e8d628897e69af8fa8",
                                                   location: Location(latitude: 50.454825000000014, longitude: 30.476743031229088),
                                                   radius: 1)
         

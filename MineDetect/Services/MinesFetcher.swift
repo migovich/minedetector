@@ -57,7 +57,7 @@ class MinesFetcher: NSObject {
     ]
     
     func fetchMines(_ completion: (() -> Void)? = nil) {
-        let minesRequestModel = MinesRequestModel(userID: "123",
+        let minesRequestModel = MinesRequestModel(userID: "632ef0e8d628897e69af8fa8",
                                                   location: LocationService.shared.location,
                                                   radius: 1)
         APIHandler.getMines(minesRequestModel) { [weak self] response in
