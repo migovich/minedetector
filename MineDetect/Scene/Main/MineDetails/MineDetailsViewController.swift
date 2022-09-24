@@ -13,6 +13,7 @@ class MineDetailsViewController: BaseViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     
+    var location: Location?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,18 @@ class MineDetailsViewController: BaseViewController {
     }
     
     @IBAction func saveAction(_ sender: Any) {
+        if let location = location,
+           let imageData = MainManager.shared.pendingImageData {
+            let requestModel = AddMineRequestModel(location: location,
+                                                   title: titleTextField.text ?? "",
+                                                   userdID: "632ef0e8d628897e69af8fa8",
+                                                   description: descriptionTextView.text ?? "",
+                                                   image: imageData)
+            APIHandler.addMine(requestModel) { response in
+                print(response)
+            }
+        }
+       
     }
 }
 

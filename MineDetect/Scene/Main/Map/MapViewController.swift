@@ -19,7 +19,7 @@ class MapViewController: BaseViewController {
     // MARK: Dependency Properties
     private lazy var controller = MapController(with: self)
     private let manager = MainManager.shared
-    
+    private var markerLocation: Location?
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +89,10 @@ extension MapViewController {
                                                             description: mine.description,
                                                             imageUrl: mine.imageUrl)
         }
+        
+        if let controller = segue.destination as? MineDetailsViewController {
+            controller.location = markerLocation
+        }
     }
 }
 
@@ -110,6 +114,9 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         print("📍 \(mapView.centerCoordinate)")
+        if manager.mapState == .pickMine {
+            markerLocation = mapView.centerCoordinate.location
+        }
     }
 }
 
