@@ -24,6 +24,11 @@
 		155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145A828DE13D500CAADFE /* BaseViewController.swift */; };
 		155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155145AB28DE15A600CAADFE /* SettingsViewController.swift */; };
 		155145AE28DE15B000CAADFE /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */; };
+		158F1EE128DEDECD004A42A8 /* MapMineAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE028DEDECD004A42A8 /* MapMineAnnotationView.swift */; };
+		158F1EE328DEDF74004A42A8 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE228DEDF74004A42A8 /* MapController.swift */; };
+		158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE428DEDF96004A42A8 /* LocationService.swift */; };
+		158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE628DEE145004A42A8 /* MapManager.swift */; };
+		158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE828DEE219004A42A8 /* MineModel.swift */; };
 		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +53,11 @@
 		155145A828DE13D500CAADFE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		155145AB28DE15A600CAADFE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		155145AD28DE15B000CAADFE /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		158F1EE028DEDECD004A42A8 /* MapMineAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMineAnnotationView.swift; sourceTree = "<group>"; };
+		158F1EE228DEDF74004A42A8 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		158F1EE428DEDF96004A42A8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		158F1EE628DEE145004A42A8 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		158F1EE828DEE219004A42A8 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
 		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,8 +146,13 @@
 		1551459628DE0D6800CAADFE /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				1551459428DE0D6400CAADFE /* MapViewController.swift */,
 				1551459D28DE0DBC00CAADFE /* MapViewController.storyboard */,
+				158F1EE428DEDF96004A42A8 /* LocationService.swift */,
+				158F1EE228DEDF74004A42A8 /* MapController.swift */,
+				158F1EE628DEE145004A42A8 /* MapManager.swift */,
+				158F1EE028DEDECD004A42A8 /* MapMineAnnotationView.swift */,
+				1551459428DE0D6400CAADFE /* MapViewController.swift */,
+				158F1EE828DEE219004A42A8 /* MineModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -244,7 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */,
+				158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */,
 				155145A528DE0EF400CAADFE /* NSObject+Extensions.swift in Sources */,
+				158F1EE328DEDF74004A42A8 /* MapController.swift in Sources */,
+				158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */,
 				1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */,
 				155145AC28DE15A600CAADFE /* SettingsViewController.swift in Sources */,
 				1551459528DE0D6400CAADFE /* MapViewController.swift in Sources */,
@@ -255,6 +274,7 @@
 				1551459A28DE0D9E00CAADFE /* PhotoViewController.swift in Sources */,
 				1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */,
 				1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */,
+				158F1EE128DEDECD004A42A8 /* MapMineAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

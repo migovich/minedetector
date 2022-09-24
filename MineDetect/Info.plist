@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use GPS to inform you of potentially dangerous areas</string>
 </dict>
 </plist>
