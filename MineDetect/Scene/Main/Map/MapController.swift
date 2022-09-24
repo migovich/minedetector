@@ -34,6 +34,7 @@ class MapController {
         self.manager.delegate = self
         self.manager.mines = mines
         self.manager.checkLocationAuthorization()
+        MinesFetcher.shared.minesFetcherDelegate = self
     }
     
     func updateViews() {
@@ -59,3 +60,10 @@ extension MapController: MapManagerDelegate {
         }
     }
 }
+
+extension MapController: MinesFetcherDelegate {
+    func didFetchMines(_ data: [MineModel]) {
+        manager.mines = data
+    }
+}
+
