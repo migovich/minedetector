@@ -10,8 +10,23 @@ import UIKit
 
 
 class APIHandler: NSObject {
-    static func updateUser(_ userData: User, _ completion: @escaping ((ResponseModel?) -> ())) {
-            call(ACRequest.updateUser(userData))
+    static func signup(_ requestModel: SignupRequestModel, _ completion: @escaping ((ResponseModel?) -> ())) {
+            call(ACRequest.signup(requestModel))
+            .decoded(as: ResponseModel.self, using: JSONDecoder())
+            .observe { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        completion(data)
+                    case .failure(_):
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
+    static func login(_ requestModel: LoginRequestModel, _ completion: @escaping ((ResponseModel?) -> ())) {
+        call(ACRequest.login(requestModel))
             .decoded(as: ResponseModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
@@ -40,6 +55,21 @@ class APIHandler: NSObject {
             }
     }
     
+    static func getUser(_ requestModel: GetUserRequestModel, _ completion: @escaping ((GetUserResponseModel?) -> ())) {
+        call(ACRequest.getUser(requestModel))
+            .decoded(as: GetUserResponseModel.self, using: JSONDecoder())
+            .observe { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        completion(data)
+                    case .failure(_):
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
     static func addMine(_ requestModel: AddMineRequestModel, _ completion: @escaping ((AddMineResponseModel?) -> ())) {
         upload(ACRequest.addMine(requestModel))
             .decoded(as: AddMineResponseModel.self, using: JSONDecoder())
@@ -54,6 +84,8 @@ class APIHandler: NSObject {
                 }
             }
     }
+    
+    
 }
 
 extension APIHandler {
@@ -77,6 +109,7 @@ struct ACRequestData {
 }
 let PORT = 4000
 let HOST = "3.15.199.210"
+
 class ACRequest {
     var baseComponents: URLComponents? {
         var temp = URLComponents()
@@ -167,15 +200,32 @@ class ACRequest {
         return ACRequest(data)
     }
     
-//    static func getMines(_ requestModel: MinesRequestModel) -> ACRequest {
-//        let data = ACRequestData(path: "/api/mines",
-//                                 method: "GET",
-//                                 headers: headers)
-//        return ACRequest(data)
-//    }
+    static func signup(_ requestModel: SignupRequestModel) -> ACRequest {
+        let data = ACRequestData(path: "/api/user/signUp",
+                                 method: "POST",
+                                 body: try? JSONEncoder().encode(requestModel),
+                                 headers: headers)
+        return ACRequest(data)
+    }
     
-   
+    static func login(_ requestModel: LoginRequestModel) -> ACRequest {
+        let data = ACRequestData(path: "/api/user/login",
+                                 method: "POST",
+                                 body: try? JSONEncoder().encode(requestModel),
+                                 headers: headers)
+        return ACRequest(data)
+    }
     
+    static func getUser(_ requestModel: GetUserRequestModel) -> ACRequest {
+        let data = ACRequestData(path: "/api/getUser",
+                                 method: "GET",
+                                 headers: headers,
+                                 queries: [
+                                    URLQueryItem(name: "userName", value: requestModel.userName)
+                                 ])
+        return ACRequest(data)
+    }
+
     static func requestCallback(_ requestModel: RequestModel) -> ACRequest {
         let data = ACRequestData(path: "/api/mobile/v1/requestCallback",
                                  method: "POST",
