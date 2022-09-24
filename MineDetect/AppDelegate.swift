@@ -18,7 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   location: Location(latitude: 50.454825000000014, longitude: 30.476743031229088),
                                                   radius: 1)
         
-        APIHandler.getMines(minesRequestModel) { response in
+//        APIHandler.getMines(minesRequestModel) { response in
+//            print(response)
+//        }
+       
+        APIHandler.signup(SignupRequestModel(name: "user", deviceToken: "123")) { response in
+            print("signup:")
+            print(response)
+        }
+       
+        APIHandler.login(LoginRequestModel(userName: "user")) { response in
+            print("login:")
+            print(response)
+        }
+        
+        APIHandler.getUser(GetUserRequestModel(userName: "user")) { response in
+            print("getUser:")
             print(response)
         }
         return true

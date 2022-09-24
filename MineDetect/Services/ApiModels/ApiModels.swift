@@ -51,6 +51,23 @@ struct MinesModelElement: Codable {
     }
 }
 
+struct SignupRequestModel: Codable {
+    let name: String
+    let deviceToken: String
+}
+
+struct LoginRequestModel: Codable {
+    let userName: String
+}
+
+struct GetUserRequestModel: Codable {
+    let userName: String
+}
+
+struct GetUserResponseModel: Codable {
+    let userId: String
+}
+
 // MARK: - MinesResponseModelElement
 struct MinesResponseModelElement: Codable {
     let location: Location
