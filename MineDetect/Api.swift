@@ -8,18 +8,49 @@
 import Foundation
 import UIKit
 
-struct User: Codable {
-    
-}
-
 struct ResponseModel: Codable {
     
 }
+
+struct MinesRequestModel: Codable {}
+
+// MARK: - MinesModelElement
+struct MinesModelElement: Codable {
+    let status, id, photoURL, title: String
+    let userID, descriptions: String
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case id = "_id"
+        case photoURL = "photoUrl"
+        case title
+        case userID = "userId"
+        case descriptions
+    }
+}
+
+typealias MinesModel = [MinesModelElement]
+//[{"status":"Open","_id":"632eb2afae903bda92d2c22b","photoUrl":"URL","title":"Mine1","userId":"1","descriptions":"descriptions"},{"status":"Open","_id":"632eb368ae903bda92d2c22d","photoUrl":"URL","title":"Mine2","userId":"2","descriptions":"descriptions"}]
 
 class APIHandler: NSObject {
     static func updateUser(_ userData: User, _ completion: @escaping ((ResponseModel?) -> ())) {
             call(ACRequest.updateUser(userData))
             .decoded(as: ResponseModel.self, using: JSONDecoder())
+            .observe { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        completion(data)
+                    case .failure(_):
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
+    static func getMines(_ requestModel: MinesRequestModel, _ completion: @escaping ((MinesModel?) -> ())) {
+        call(ACRequest.getMines(requestModel))
+            .decoded(as: MinesModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
                     switch result {
@@ -47,12 +78,14 @@ struct ACRequestData {
     var headers: [String: String]?
     var queries: [URLQueryItem]?
 }
-let HOST = "https://api.com"
+let PORT = 4000
+let HOST = "3.15.199.210"
 class ACRequest {
     var baseComponents: URLComponents? {
         var temp = URLComponents()
-        temp.scheme = "https"
+        temp.scheme = "http"
         temp.host = HOST
+        temp.port = PORT
         temp.path = "/api"
         return temp
     }
@@ -110,8 +143,8 @@ class ACRequest {
         return request
         }
     
-    static func botHistory(_ parameters: [String: Any]) -> ACRequest {
-        let data = ACRequestData(path: "/api/bot/v1/history?\(parameters.queryString)",
+    static func getMines(_ requestModel: MinesRequestModel) -> ACRequest {
+        let data = ACRequestData(path: "/api/mines",
                                  method: "GET",
                                  headers: headers)
         return ACRequest(data)
