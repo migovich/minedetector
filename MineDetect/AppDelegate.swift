@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForPushNotifications()
         
         let minesRequestModel = MinesRequestModel(userID: "123",
-                                                  location: LocationService.shared.location,
+                                                  location: Location(latitude: 50.454825000000014, longitude: 30.476743031229088),
                                                   radius: 1)
         
         APIHandler.getMines(minesRequestModel) { response in
