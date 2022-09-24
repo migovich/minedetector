@@ -12,7 +12,6 @@
 		1551457228DDEC1800CAADFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457028DDEC1800CAADFE /* Main.storyboard */; };
 		1551457428DDEC1900CAADFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1551457328DDEC1900CAADFE /* Assets.xcassets */; };
 		1551457728DDEC1900CAADFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */; };
-		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 		1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458928DE0A3000CAADFE /* MainNavigationController.swift */; };
 		1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458B28DE0B3A00CAADFE /* LoginViewController.swift */; };
 		1551458E28DE0C6900CAADFE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */; };
@@ -30,6 +29,7 @@
 		158F1EE528DEDF96004A42A8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE428DEDF96004A42A8 /* LocationService.swift */; };
 		158F1EE728DEE145004A42A8 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE628DEE145004A42A8 /* MapManager.swift */; };
 		158F1EE928DEE219004A42A8 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EE828DEE219004A42A8 /* MineModel.swift */; };
+		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 		158F1EEC28DEFB83004A42A8 /* MineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */; };
 		158F1EEE28DEFBA6004A42A8 /* MineInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */; };
 		158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */; };
@@ -38,6 +38,7 @@
 		FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */; };
 		FA4F180C28DEDEB800060FE0 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */; };
 		FA4F181628DEECED00060FE0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181528DEECED00060FE0 /* Storage.swift */; };
+		FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,6 @@
 		1551457628DDEC1900CAADFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1551457828DDEC1900CAADFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1551457E28DDED4800CAADFE /* MineDetect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MineDetect.entitlements; sourceTree = "<group>"; };
-		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		1551458928DE0A3000CAADFE /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		1551458B28DE0B3A00CAADFE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +67,7 @@
 		158F1EE428DEDF96004A42A8 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		158F1EE628DEE145004A42A8 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		158F1EE828DEE219004A42A8 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
+		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		158F1EEB28DEFB83004A42A8 /* MineInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoViewController.swift; sourceTree = "<group>"; };
 		158F1EED28DEFBA6004A42A8 /* MineInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInfoViewController.storyboard; sourceTree = "<group>"; };
 		158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDetailsViewController.swift; sourceTree = "<group>"; };
 		FA4F180B28DEDEB800060FE0 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
 		FA4F181528DEECED00060FE0 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinesFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,6 @@
 			children = (
 				FA4F181428DEECED00060FE0 /* Storage */,
 				1551457E28DDED4800CAADFE /* MineDetect.entitlements */,
-				1551457828DDEC1900CAADFE /* Info.plist */,
 				1551456A28DDEC1800CAADFE /* AppDelegate.swift */,
 				1551456C28DDEC1800CAADFE /* SceneDelegate.swift */,
 				155145A828DE13D500CAADFE /* BaseViewController.swift */,
@@ -117,7 +118,7 @@
 				1551458D28DE0C6900CAADFE /* MainTabBarViewController.swift */,
 				1551457528DDEC1900CAADFE /* LaunchScreen.storyboard */,
 				1551457828DDEC1900CAADFE /* Info.plist */,
-				FA4F180328DDFFD200060FE0 /* Api.swift */,
+				FA4F181C28DF11B100060FE0 /* Services */,
 				1551458F28DE0CAA00CAADFE /* Scene */,
 				155145A328DE0EDD00CAADFE /* Extensions */,
 				1551459328DE0D2A00CAADFE /* Resources */,
@@ -265,6 +266,15 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		FA4F181C28DF11B100060FE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F180328DDFFD200060FE0 /* Api.swift */,
+				FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +365,7 @@
 				FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */,
 				1551458C28DE0B3A00CAADFE /* LoginViewController.swift in Sources */,
 				155145A728DE13C300CAADFE /* UIViewController+Extensions.swift in Sources */,
+				FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */,
 				155145A928DE13D500CAADFE /* BaseViewController.swift in Sources */,
 				158F1EF028DEFFD1004A42A8 /* UIImageView+Extensions.swift in Sources */,
 				1551456B28DDEC1800CAADFE /* AppDelegate.swift in Sources */,
