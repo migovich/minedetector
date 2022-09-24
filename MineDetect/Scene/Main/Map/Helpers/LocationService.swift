@@ -100,3 +100,10 @@ extension LocationService: CLLocationManagerDelegate {
         checkLocationAuthorization()
     }
 }
+
+extension LocationService {
+    var location: Location {
+        Location(latitude: currentLocation?.coordinate.latitude ?? 0.0,
+                 longitude: currentLocation?.coordinate.longitude ?? 0.0)
+    }
+}

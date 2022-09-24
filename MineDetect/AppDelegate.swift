@@ -14,8 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerForPushNotifications()
         
+        let minesRequestModel = MinesRequestModel(userID: "123",
+                                                  location: LocationService.shared.location,
+                                                  radius: 1)
         
-        APIHandler.getMines(MinesRequestModel()) { response in
+        APIHandler.getMines(minesRequestModel) { response in
             print(response)
         }
         return true

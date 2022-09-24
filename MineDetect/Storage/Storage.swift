@@ -13,7 +13,7 @@ class User: Codable {
             save()
         }
     }
-    var userId: Int? {
+    var userId: String? {
         didSet {
             save()
         }
