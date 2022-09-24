@@ -45,6 +45,7 @@
 		FA4F181B28DF11A400060FE0 /* MinesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F181A28DF11A400060FE0 /* MinesFetcher.swift */; };
 		FA4F182228DF3E6B00060FE0 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F182128DF3E6B00060FE0 /* MultipartForm.swift */; };
 		FA4F182428DF3E8100060FE0 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F182328DF3E8100060FE0 /* ApiModels.swift */; };
+		FAE8A9E128DF5EE700B8E627 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = FAE8A9E028DF5EE700B8E627 /* Atlantis */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE8A9E128DF5EE700B8E627 /* Atlantis in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +351,9 @@
 			dependencies = (
 			);
 			name = MineDetect;
+			packageProductDependencies = (
+				FAE8A9E028DF5EE700B8E627 /* Atlantis */,
+			);
 			productName = MineDetect;
 			productReference = 1551456728DDEC1800CAADFE /* MineDetect.app */;
 			productType = "com.apple.product-type.application";
@@ -377,6 +382,9 @@
 				Base,
 			);
 			mainGroup = 1551455E28DDEC1800CAADFE;
+			packageReferences = (
+				FAE8A9DF28DF5EE700B8E627 /* XCRemoteSwiftPackageReference "atlantis" */,
+			);
 			productRefGroup = 1551456828DDEC1800CAADFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -660,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAE8A9DF28DF5EE700B8E627 /* XCRemoteSwiftPackageReference "atlantis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ProxymanApp/atlantis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAE8A9E028DF5EE700B8E627 /* Atlantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE8A9DF28DF5EE700B8E627 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1551455F28DDEC1800CAADFE /* Project object */;
 }
