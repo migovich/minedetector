@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MineInfoViewController: UIViewController {
+class MineInfoViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet private weak var titleLabel: UILabel!
@@ -41,11 +41,13 @@ class MineInfoViewController: UIViewController {
         guard let mineId = mineId else {
             return
         }
+        showActivityIndicator()
         APIHandler.getMineDetails(mineId) { [weak self] response in
             let mine = response?.first
             self?.model = Model(title: mine?.title,
                                 description: mine?.description,
                                 imageUrl: mine?.photoURL)
+            self?.hideActivityIndicator()
         }
     }
     
