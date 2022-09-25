@@ -63,8 +63,7 @@ class MapManager {
             let latitude = mine.location.latitude
             let longitude = mine.location.longitude
             let annotation = CustomAnnotation(model: mine)
-            // TODO: Use MineType enum 
-            annotation.title = "\(mine.typeID)"
+            annotation.title = mine.type.description
             annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             annotations.append(annotation)
         }

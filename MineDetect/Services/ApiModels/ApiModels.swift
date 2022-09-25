@@ -68,6 +68,22 @@ struct GetUserResponseModel: Codable {
     let userId: String
 }
 
+enum MineType: Int {
+    case mine
+    case fragment
+    case granade
+    case parachute
+    
+    var description: String {
+        switch self {
+        case .mine: return "Міна"
+        case .fragment: return "Снаряд (уламок)"
+        case .granade: return "Граната"
+        case .parachute: return "Парашют"
+        }
+    }
+}
+
 // MARK: - MinesResponseModelElement
 struct MinesResponseModelElement: Codable {
     let location: Location
@@ -82,6 +98,10 @@ struct MinesResponseModelElement: Codable {
         case typeID = "typeId"
         case mineID = "mineId"
         case v = "__v"
+    }
+    
+    var type: MineType {
+        return MineType.init(rawValue: typeID) ?? .fragment
     }
 }
 
