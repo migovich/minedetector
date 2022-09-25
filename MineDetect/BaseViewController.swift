@@ -25,7 +25,7 @@ extension BaseViewController {
     func showActivityIndicator() {
         container.frame = view.frame
         container.center = view.center
-        container.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        container.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         
         activityIndicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         activityIndicator.center = view.center
@@ -38,9 +38,9 @@ extension BaseViewController {
     }
     
     func hideActivityIndicator() {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.container.removeFromSuperview()
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.container.removeFromSuperview()
         }
     }
 }
