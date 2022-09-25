@@ -217,7 +217,7 @@ class ACRequest {
     }
     
     static func getUser(_ requestModel: GetUserRequestModel) -> ACRequest {
-        let data = ACRequestData(path: "/api/getUser",
+        let data = ACRequestData(path: "/api/user/getUser",
                                  method: "GET",
                                  headers: headers,
                                  queries: [
