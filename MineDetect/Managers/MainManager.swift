@@ -24,4 +24,9 @@ final class MainManager {
     
     // MARK: Life Cycle
     private init() {}
+    
+    func clear() {
+        mapState = .defaultState
+        pendingImageData = nil
+    }
 }
