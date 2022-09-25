@@ -9,12 +9,14 @@ import UIKit
 
 class MineDetailsViewController: BaseViewController {
 
+    @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var sendButton: UIButton!
     
     var location: Location?
+    var address: String?
     
     private var isLoading: Bool = false {
         didSet {
@@ -29,13 +31,16 @@ class MineDetailsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendButton.isEnabled = location != nil
         descriptionTextView.text = ""
         descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        locationLabel.text = address ?? "Поверніться на мапу та спробуйте вказати адресу ще раз"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureImageView()
+        sendButton.isEnabled = MainManager.shared.pendingImageData != nil
     }
     
     private func configureImageView() {
