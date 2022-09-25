@@ -14,19 +14,36 @@ class MineInfoViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     
-    // MARK: Computed properties
-    var model: Model?
+    // MARK: Stored properties [Public]
+    var mineId: String?
     
-    // MARK: Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureView()
+    // MARK: Computed properties [Private]
+    private var model: Model? {
+        didSet {
+            configureView()
+        }
     }
     
+    // MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getMineDetails()
+    }
+    
+    // MARK: Functions [Private]
     private func configureView() {
         titleLabel.text = model?.title ?? ""
         descriptionLabel.text = model?.description ?? ""
         imageView.downloaded(from: model?.imageUrl ?? "")
+    }
+    
+    private func getMineDetails() {
+        guard let mineId = mineId else {
+            return
+        }
+        APIHandler.getMineDetails(mineId) { [weak self] mine in
+            self?.model = Model(title: mine?.title, description: mine?.descriptions, imageUrl: mine?.photoURL)
+        }
     }
     
     // MARK: Helpers

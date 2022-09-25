@@ -88,10 +88,8 @@ class MapViewController: BaseViewController {
 extension MapViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? MineInfoViewController,
-           let mine = sender as? MineModel {
-            controller.model = MineInfoViewController.Model(title: mine.name,
-                                                            description: mine.description,
-                                                            imageUrl: mine.imageUrl)
+           let mine = sender as? MinesResponseModelElement {
+            controller.mineId = mine.mineID
         }
         
         if let controller = segue.destination as? MineDetailsViewController {
