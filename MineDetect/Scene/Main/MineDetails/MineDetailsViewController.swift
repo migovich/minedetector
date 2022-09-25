@@ -38,12 +38,14 @@ class MineDetailsViewController: BaseViewController {
     
     @IBAction func saveAction(_ sender: Any) {
         if let location = location,
-           let imageData = MainManager.shared.pendingImageData {
+           let imageData = MainManager.shared.pendingImageData,
+           let image = UIImage(data: imageData),
+           let compressedImageData = image.jpeg(.medium) {
             let requestModel = AddMineRequestModel(location: location,
                                                    title: titleTextField.text ?? "",
                                                    userdID: "632ef0e8d628897e69af8fa8",
                                                    description: descriptionTextView.text ?? "",
-                                                   image: imageData)
+                                                   image: compressedImageData)
             APIHandler.addMine(requestModel) { response in
                 print(response)
             }

@@ -37,6 +37,7 @@
 		158F1EFD28DF1CD8004A42A8 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1EFC28DF1CD8004A42A8 /* PhotoPreviewViewController.swift */; };
 		158F1EFF28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F1EFE28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard */; };
 		158F1F0228DF2CE0004A42A8 /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F1F0128DF2CE0004A42A8 /* MainManager.swift */; };
+		1592351428DF8E7500173189 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592351328DF8E7500173189 /* UIImage+Extensions.swift */; };
 		FA4F180428DDFFD200060FE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180328DDFFD200060FE0 /* Api.swift */; };
 		FA4F180628DE19E500060FE0 /* MineDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4F180528DE19E500060FE0 /* MineDetails.storyboard */; };
 		FA4F180928DEDD2700060FE0 /* MineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */; };
@@ -82,6 +83,7 @@
 		158F1EFC28DF1CD8004A42A8 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		158F1EFE28DF1CE1004A42A8 /* PhotoPreviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPreviewViewController.storyboard; sourceTree = "<group>"; };
 		158F1F0128DF2CE0004A42A8 /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		1592351328DF8E7500173189 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FA4F180328DDFFD200060FE0 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		FA4F180528DE19E500060FE0 /* MineDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineDetails.storyboard; sourceTree = "<group>"; };
 		FA4F180828DEDD2700060FE0 /* MineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDetailsViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				155145A428DE0EF400CAADFE /* NSObject+Extensions.swift */,
 				155145A628DE13C300CAADFE /* UIViewController+Extensions.swift */,
 				158F1EEF28DEFFD1004A42A8 /* UIImageView+Extensions.swift */,
+				1592351328DF8E7500173189 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				1551459A28DE0D9E00CAADFE /* PhotoViewController.swift in Sources */,
 				158F1EFD28DF1CD8004A42A8 /* PhotoPreviewViewController.swift in Sources */,
 				1551458A28DE0A3000CAADFE /* MainNavigationController.swift in Sources */,
+				1592351428DF8E7500173189 /* UIImage+Extensions.swift in Sources */,
 				1551456D28DDEC1800CAADFE /* SceneDelegate.swift in Sources */,
 				158F1EE128DEDECD004A42A8 /* MapMineAnnotationView.swift in Sources */,
 			);
