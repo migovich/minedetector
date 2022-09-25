@@ -8,8 +8,9 @@
 import Foundation
 
 protocol MinesFetcherDelegate: AnyObject {
-    func didFetchMines(_ data: [MineModel])
+    func didFetchMines(_ data: [MinesResponseModelElement])
 }
+
 class MinesFetcher: NSObject {
     static let shared = MinesFetcher()
     private var fetchMinesWorkItem: DispatchWorkItem?
@@ -62,10 +63,9 @@ class MinesFetcher: NSObject {
                                                   radius: 1)
         APIHandler.getMines(minesRequestModel) { [weak self] response in
             print(response)
-            if let response = response,
-                let mockMines = self?.mockMines {
+            if let response = response {
                 DispatchQueue.main.async {
-                    self?.minesFetcherDelegate?.didFetchMines(mockMines)
+                    self?.minesFetcherDelegate?.didFetchMines(response)
                 }
             }
         }

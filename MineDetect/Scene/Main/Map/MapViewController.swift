@@ -80,7 +80,7 @@ class MapViewController: BaseViewController {
     
     // MARK: Helpers
     class MineInfoTapGestureRecognizer: UITapGestureRecognizer {
-        var model: MineModel?
+        var model: MinesResponseModelElement?
     }
 }
 

@@ -23,7 +23,7 @@ class MapManager {
     private let radius: CLLocationDistance = 500
     
     // MARK: Computed Properties
-    var mines: [MineModel] = [] {
+    var mines: MinesResponseModel = [] {
         didSet {
             delegate?.update(map: annotations)
         }
@@ -57,13 +57,14 @@ class MapManager {
         locationService.checkLocationAuthorization()
     }
     
-    private func getAnnotations(for mines: [MineModel]) -> [MKPointAnnotation] {
+    private func getAnnotations(for mines: MinesResponseModel) -> [MKPointAnnotation] {
         var annotations: [MKPointAnnotation] = []
         mines.forEach { mine in
             let latitude = mine.location.latitude
             let longitude = mine.location.longitude
             let annotation = CustomAnnotation(model: mine)
-            annotation.title = mine.name
+            // TODO: Use MineType enum 
+            annotation.title = "\(mine.typeID)"
             annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             annotations.append(annotation)
         }
