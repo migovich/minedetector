@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(response)
 //        }
        
-        APIHandler.signup(SignupRequestModel(name: "user", deviceToken: "123")) { response in
+        APIHandler.signup(SignupRequestModel(name: "user123", deviceToken: "123")) { response in
             print("signup:")
             print(response)
         }

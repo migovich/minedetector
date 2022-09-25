@@ -11,6 +11,18 @@ struct ResponseModel: Codable {
     
 }
 
+// MARK: - LoginResponseModel
+struct LoginResponseModel: Codable {
+    let id, name, deviceToken, role: String
+    let v: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case name, deviceToken, role
+        case v = "__v"
+    }
+}
+
 // MARK: - AddMineResponseModel
 struct AddMineResponseModel: Codable {
     let title, addMineResponseModelDescription, status, id: String

@@ -10,9 +10,9 @@ import UIKit
 
 
 class APIHandler: NSObject {
-    static func signup(_ requestModel: SignupRequestModel, _ completion: @escaping ((ResponseModel?) -> ())) {
+    static func signup(_ requestModel: SignupRequestModel, _ completion: @escaping ((LoginResponseModel?) -> ())) {
             call(ACRequest.signup(requestModel))
-            .decoded(as: ResponseModel.self, using: JSONDecoder())
+            .decoded(as: LoginResponseModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
                     switch result {
@@ -25,9 +25,9 @@ class APIHandler: NSObject {
             }
     }
     
-    static func login(_ requestModel: LoginRequestModel, _ completion: @escaping ((ResponseModel?) -> ())) {
+    static func login(_ requestModel: LoginRequestModel, _ completion: @escaping ((LoginResponseModel?) -> ())) {
         call(ACRequest.login(requestModel))
-            .decoded(as: ResponseModel.self, using: JSONDecoder())
+            .decoded(as: LoginResponseModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
                     switch result {
