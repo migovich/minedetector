@@ -187,7 +187,7 @@ class ACRequest {
 
         let data = ACRequestData(path: "/api/mines",
                                  method: "POST",
-                                 headers: headers,
+                                 headers: ["Content-Type": form.contentType],
                                  fromData: form.bodyData)
         return ACRequest(data)
     }
