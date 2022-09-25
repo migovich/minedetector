@@ -29,9 +29,12 @@ class MineDetailsViewController: BaseViewController {
         }
     }
     
+    private var isValidated: Bool {
+        return MainManager.shared.pendingImageData != nil && location != nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendButton.isEnabled = location != nil
         descriptionTextView.text = ""
         descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
         locationLabel.text = address ?? "Поверніться на мапу та спробуйте вказати адресу ще раз"
@@ -40,7 +43,7 @@ class MineDetailsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureImageView()
-        sendButton.isEnabled = MainManager.shared.pendingImageData != nil
+        sendButton.isEnabled = isValidated
     }
     
     private func configureImageView() {
