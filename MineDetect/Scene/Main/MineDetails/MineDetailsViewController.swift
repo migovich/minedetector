@@ -48,6 +48,9 @@ class MineDetailsViewController: BaseViewController {
                                                    image: compressedImageData)
             APIHandler.addMine(requestModel) { response in
                 print(response)
+                if let response = response {
+                    MinesFetcher.shared.fetchMines()
+                }
             }
         }
        
