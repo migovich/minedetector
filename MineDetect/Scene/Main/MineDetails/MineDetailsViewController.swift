@@ -9,11 +9,23 @@ import UIKit
 
 class MineDetailsViewController: BaseViewController {
 
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var photoImageView: UIImageView!
+    @IBOutlet private weak var sendButton: UIButton!
     
     var location: Location?
+    
+    private var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                showActivityIndicator()
+                sendButton.isEnabled = false
+            } else {
+                hideActivityIndicator()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +53,17 @@ class MineDetailsViewController: BaseViewController {
            let imageData = MainManager.shared.pendingImageData,
            let image = UIImage(data: imageData),
            let compressedImageData = image.jpeg(.medium) {
+            isLoading = true
             let requestModel = AddMineRequestModel(location: location,
                                                    title: titleTextField.text ?? "",
                                                    userdID: "632ef0e8d628897e69af8fa8",
                                                    description: descriptionTextView.text ?? "",
                                                    image: compressedImageData)
-            APIHandler.addMine(requestModel) { response in
-                print(response)
+            APIHandler.addMine(requestModel) { [weak self] response in
+                print(response ?? "⚠️ APIHandler.addMine response is nil")
+                MainManager.shared.clear()
+                self?.isLoading = false
+                self?.navigationController?.popViewController(animated: true)
             }
         }
        

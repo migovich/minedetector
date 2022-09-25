@@ -152,6 +152,7 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="fUW-YN-CeM" id="YKL-mg-FCs"/>
                         <outlet property="photoImageView" destination="BeJ-Uw-s8t" id="lNu-pn-GxF"/>
+                        <outlet property="sendButton" destination="mpv-sd-MEM" id="PBz-hs-3H4"/>
                         <outlet property="titleTextField" destination="ePd-CV-AMH" id="6tU-Iz-Rcc"/>
                         <segue destination="jnw-wW-IE4" kind="show" identifier="takePhoto" id="7EE-5e-dJn"/>
                     </connections>
