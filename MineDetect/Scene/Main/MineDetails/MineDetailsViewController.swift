@@ -56,7 +56,7 @@ class MineDetailsViewController: BaseViewController {
             isLoading = true
             let requestModel = AddMineRequestModel(location: location,
                                                    title: titleTextField.text ?? "",
-                                                   userdID: "632ef0e8d628897e69af8fa8",
+                                                   userdID: Storage.shared.user?.userId ?? "",
                                                    description: descriptionTextView.text ?? "",
                                                    image: compressedImageData)
             APIHandler.addMine(requestModel) { [weak self] response in
