@@ -69,6 +69,9 @@ class MineDetailsViewController: BaseViewController {
                                                    image: compressedImageData)
             APIHandler.addMine(requestModel) { [weak self] response in
                 print(response ?? "⚠️ APIHandler.addMine response is nil")
+                if let response = response {
+                    MinesFetcher.shared.fetchMines()
+                }
                 MainManager.shared.clear()
                 self?.isLoading = false
                 self?.navigationController?.popViewController(animated: true)
