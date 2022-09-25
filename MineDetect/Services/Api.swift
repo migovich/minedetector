@@ -216,7 +216,7 @@ class ACRequest {
     }
     
     static func signup(_ requestModel: SignupRequestModel) -> ACRequest {
-        let data = ACRequestData(path: "/api/user/signUp",
+        let data = ACRequestData(path: "/api/user/mobile/signUp",
                                  method: "POST",
                                  body: try? JSONEncoder().encode(requestModel),
                                  headers: headers)

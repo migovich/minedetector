@@ -46,6 +46,7 @@ extension MapController: MapManagerDelegate {
     
     func setLocationAuthorization(status isGranted: Bool) {
         if isGranted {
+            MinesFetcher.shared.fetchMines()
             updateViews()
         }
     }
