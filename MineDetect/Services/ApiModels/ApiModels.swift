@@ -49,6 +49,8 @@ struct AddMineRequestModel {
 }
 
 // MARK: - MinesModelElement
+typealias MinesModelElementResponse = [MinesModelElement]
+
 struct MinesModelElement: Codable {
     let status: String
     let id: String
