@@ -22,6 +22,8 @@ class MapViewController: BaseViewController {
     private lazy var controller = MapController(with: self)
     private let manager = MainManager.shared
     private var markerLocation: Location?
+    private var address: String?
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +96,7 @@ extension MapViewController {
         
         if let controller = segue.destination as? MineDetailsViewController {
             controller.location = markerLocation
+            controller.address = address
         }
     }
 }
@@ -121,6 +124,7 @@ extension MapViewController: MKMapViewDelegate {
             let latitude = mapView.centerCoordinate.location.latitude
             let longitude = mapView.centerCoordinate.location.longitude
             LocationService.shared.getAddressFromCoordinate(latitude: latitude, longitude: longitude) { [weak self] address in
+                self?.address = address
                 self?.locationLabel.text = address
             }
         }

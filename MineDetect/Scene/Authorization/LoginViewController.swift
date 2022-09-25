@@ -39,7 +39,11 @@ class LoginViewController: BaseViewController {
             // api request { userId in
             //  Storage.shared.user?.userId = userId
             //}
-            let token = Storage.shared.user?.deviceToken ?? ""
+            var token = Storage.shared.user?.deviceToken ?? ""
+            #if targetEnvironment(simulator)
+            token = "123"
+            #else
+            #endif
             APIHandler.signup(SignupRequestModel(name: userName, deviceToken: token)) { [weak self] response in
                 print("signup:")
                 print(response)
