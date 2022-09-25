@@ -8,9 +8,9 @@
 import MapKit.MKPointAnnotation
 
 class CustomAnnotation: MKPointAnnotation {
-    let model: MinesResponseModelElement
+    let model: MineModel
     
-    init(model: MinesResponseModelElement) {
+    init(model: MineModel) {
         self.model = model
     }
 }

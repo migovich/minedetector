@@ -23,7 +23,7 @@ class MapManager {
     private let radius: CLLocationDistance = 500
     
     // MARK: Computed Properties
-    var mines: MinesResponseModel = [] {
+    var mines: [MineModel] = [] {
         didSet {
             delegate?.update(map: annotations)
         }
@@ -57,7 +57,7 @@ class MapManager {
         locationService.checkLocationAuthorization()
     }
     
-    private func getAnnotations(for mines: MinesResponseModel) -> [MKPointAnnotation] {
+    private func getAnnotations(for mines: [MineModel]) -> [MKPointAnnotation] {
         var annotations: [MKPointAnnotation] = []
         mines.forEach { mine in
             let latitude = mine.location.latitude

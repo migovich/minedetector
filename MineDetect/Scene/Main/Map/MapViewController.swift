@@ -80,7 +80,7 @@ class MapViewController: BaseViewController {
     
     // MARK: Helpers
     class MineInfoTapGestureRecognizer: UITapGestureRecognizer {
-        var model: MinesResponseModelElement?
+        var model: MineModel?
     }
 }
 
@@ -88,7 +88,7 @@ class MapViewController: BaseViewController {
 extension MapViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? MineInfoViewController,
-           let mine = sender as? MinesResponseModelElement {
+           let mine = sender as? MineModel {
             controller.mineId = mine.mineID
         }
         

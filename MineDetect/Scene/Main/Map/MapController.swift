@@ -52,7 +52,7 @@ extension MapController: MapManagerDelegate {
 }
 
 extension MapController: MinesFetcherDelegate {
-    func didFetchMines(_ data: [MinesResponseModelElement]) {
+    func didFetchMines(_ data: [MineModel]) {
         manager.mines = data
     }
 }

@@ -38,16 +38,24 @@ struct AddMineRequestModel {
 
 // MARK: - MinesModelElement
 struct MinesModelElement: Codable {
-    let status, id, photoURL, title: String
-    let userID, descriptions: String
+    let status: String
+    let id: String
+    let photoURL: String
+    let title: String
+    let typeID: Int
+    let description: String
+    let score: Double
+    let v: Int
     
     enum CodingKeys: String, CodingKey {
         case status
         case id = "_id"
         case photoURL = "photoUrl"
         case title
-        case userID = "userId"
-        case descriptions
+        case typeID = "typeId"
+        case description
+        case score
+        case v = "__v"
     }
 }
 
@@ -68,22 +76,6 @@ struct GetUserResponseModel: Codable {
     let userId: String
 }
 
-enum MineType: Int {
-    case mine
-    case fragment
-    case granade
-    case parachute
-    
-    var description: String {
-        switch self {
-        case .mine: return "Міна"
-        case .fragment: return "Снаряд (уламок)"
-        case .granade: return "Граната"
-        case .parachute: return "Парашют"
-        }
-    }
-}
-
 // MARK: - MinesResponseModelElement
 struct MinesResponseModelElement: Codable {
     let location: Location
@@ -98,10 +90,6 @@ struct MinesResponseModelElement: Codable {
         case typeID = "typeId"
         case mineID = "mineId"
         case v = "__v"
-    }
-    
-    var type: MineType {
-        return MineType.init(rawValue: typeID) ?? .fragment
     }
 }
 

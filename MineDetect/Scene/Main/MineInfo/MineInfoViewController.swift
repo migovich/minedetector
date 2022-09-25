@@ -42,7 +42,9 @@ class MineInfoViewController: UIViewController {
             return
         }
         APIHandler.getMineDetails(mineId) { [weak self] mine in
-            self?.model = Model(title: mine?.title, description: mine?.descriptions, imageUrl: mine?.photoURL)
+            self?.model = Model(title: mine?.title,
+                                description: mine?.description,
+                                imageUrl: mine?.photoURL)
         }
     }
     
