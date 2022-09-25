@@ -15,6 +15,8 @@ class MapViewController: BaseViewController {
     @IBOutlet weak var pickMineStackView: UIStackView!
     @IBOutlet weak var pinImageView: UIImageView!
     @IBOutlet weak var footerButtonsStackView: UIStackView!
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var locationLabel: UILabel!
     
     // MARK: Dependency Properties
     private lazy var controller = MapController(with: self)
@@ -42,10 +44,12 @@ class MapViewController: BaseViewController {
             pinImageView.isHidden = true
             pickMineStackView.isHidden = true
             footerButtonsStackView.isHidden = false
+            locationView.isHidden = true
         case .pickMine:
             pinImageView.isHidden = false
             pickMineStackView.isHidden = false
             footerButtonsStackView.isHidden = true
+            locationView.isHidden = false
         }
     }
     
@@ -85,9 +89,7 @@ extension MapViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? MineInfoViewController,
            let mine = sender as? MineModel {
-            controller.model = MineInfoViewController.Model(title: mine.name,
-                                                            description: mine.description,
-                                                            imageUrl: mine.imageUrl)
+            controller.mineId = mine.mineID
         }
         
         if let controller = segue.destination as? MineDetailsViewController {
@@ -116,6 +118,11 @@ extension MapViewController: MKMapViewDelegate {
         print("📍 \(mapView.centerCoordinate)")
         if manager.mapState == .pickMine {
             markerLocation = mapView.centerCoordinate.location
+            let latitude = mapView.centerCoordinate.location.latitude
+            let longitude = mapView.centerCoordinate.location.longitude
+            LocationService.shared.getAddressFromCoordinate(latitude: latitude, longitude: longitude) { [weak self] address in
+                self?.locationLabel.text = address
+            }
         }
     }
 }

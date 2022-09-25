@@ -55,6 +55,21 @@ class APIHandler: NSObject {
             }
     }
     
+    static func getMineDetails(_ id: String, _ completion: @escaping ((MinesModelElement?) -> ())) {
+        call(ACRequest.getMineDetails(id))
+            .decoded(as: MinesModelElement.self, using: JSONDecoder())
+            .observe { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        completion(data)
+                    case .failure(_):
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
     static func getUser(_ requestModel: GetUserRequestModel, _ completion: @escaping ((GetUserResponseModel?) -> ())) {
         call(ACRequest.getUser(requestModel))
             .decoded(as: GetUserResponseModel.self, using: JSONDecoder())
@@ -226,6 +241,13 @@ class ACRequest {
         return ACRequest(data)
     }
 
+    static func getMineDetails(_ id: String) -> ACRequest {
+        let data = ACRequestData(path: "/api/mines/" + id,
+                                 method: "GET",
+                                 headers: headers)
+        return ACRequest(data)
+    }
+    
     static func requestCallback(_ requestModel: RequestModel) -> ACRequest {
         let data = ACRequestData(path: "/api/mobile/v1/requestCallback",
                                  method: "POST",

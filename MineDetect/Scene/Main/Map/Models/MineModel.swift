@@ -10,10 +10,27 @@ protocol Serializable {
     func serialized() -> String
 }
 
+enum MineType: Int {
+    case mine
+    case fragment
+    case granade
+    case parachute
+    case other
+    
+    var description: String {
+        switch self {
+        case .mine: return "Міна"
+        case .fragment: return "Снаряд (уламок)"
+        case .granade: return "Граната"
+        case .parachute: return "Парашют"
+        case .other: return "Інше"
+        }
+    }
+}
+
 struct MineModel {
-    let name: String?
-    let description: String?
-    let imageUrl: String?
+    let type: MineType
+    let mineID: String
     let location: Location
 }
 

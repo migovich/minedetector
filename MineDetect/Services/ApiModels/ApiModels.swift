@@ -38,16 +38,24 @@ struct AddMineRequestModel {
 
 // MARK: - MinesModelElement
 struct MinesModelElement: Codable {
-    let status, id, photoURL, title: String
-    let userID, descriptions: String
+    let status: String
+    let id: String
+    let photoURL: String
+    let title: String
+    let typeID: Int
+    let description: String
+    let score: Double
+    let v: Int
     
     enum CodingKeys: String, CodingKey {
         case status
         case id = "_id"
         case photoURL = "photoUrl"
         case title
-        case userID = "userId"
-        case descriptions
+        case typeID = "typeId"
+        case description
+        case score
+        case v = "__v"
     }
 }
 
