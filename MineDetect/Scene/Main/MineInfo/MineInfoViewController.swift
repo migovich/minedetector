@@ -41,7 +41,8 @@ class MineInfoViewController: UIViewController {
         guard let mineId = mineId else {
             return
         }
-        APIHandler.getMineDetails(mineId) { [weak self] mine in
+        APIHandler.getMineDetails(mineId) { [weak self] response in
+            let mine = response?.first
             self?.model = Model(title: mine?.title,
                                 description: mine?.description,
                                 imageUrl: mine?.photoURL)

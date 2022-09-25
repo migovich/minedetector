@@ -55,14 +55,14 @@ class APIHandler: NSObject {
             }
     }
     
-    static func getMineDetails(_ id: String, _ completion: @escaping ((MinesModelElement?) -> ())) {
+    static func getMineDetails(_ id: String, _ completion: @escaping ((MinesElementResponseModel?) -> ())) {
         call(ACRequest.getMineDetails(id))
-            .decoded(as: MinesModelElementResponse.self, using: JSONDecoder())
+            .decoded(as: MinesElementResponseModel.self, using: JSONDecoder())
             .observe { result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let data):
-                        completion(data.first)
+                        completion(data)
                     case .failure(_):
                         completion(nil)
                     }
